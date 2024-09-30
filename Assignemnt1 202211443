@@ -1,0 +1,278 @@
+#Reservation class Code
+# Reservation class is to handle information of reservation details like reservationPIN, checkInDate, checkOutDate, numberOfNights, numberOfRooms, status and totalPrice.
+class Reservation:
+    # Initialize the reservation attributes
+    def __init__(self, reservationPIN, checkInDate, checkOutDate, numberOfNights, numberOfRooms, status, totalPrice):
+        self.__reservationPIN = reservationPIN
+        self.__checkInDate = checkInDate
+        self.__checkOutDate = checkOutDate
+        self.__numberOfNights = numberOfNights
+        self.__numberOfRooms = numberOfRooms
+        self.__status = status
+        self.__totalPrice = totalPrice
+
+    # Call the reservation and retrieve the reservationPIN
+    def getReservationPIN(self):
+        return self.__reservationPIN
+   #Use the set function to allow the guests to set or update their reservation details
+
+    def setReservationPIN(self, reservationPIN):
+        self.__reservationPIN = reservationPIN
+
+    def getCheckInDate(self):
+        return self.__checkInDate
+
+    def setCheckInDate(self, checkInDate):
+        self.__checkInDate = checkInDate
+
+    def getCheckOutDate(self):
+        return self.__checkOutDate
+
+    def setCheckOutDate(self, checkOutDate):
+        self.__checkOutDate = checkOutDate
+
+    def getNumberOfNights(self):
+        return self.__numberOfNights
+
+    def setNumberOfNights(self, numberOfNights):
+        self.__numberOfNights = numberOfNights
+
+    def getNumberOfRooms(self):
+        return self.__numberOfRooms
+
+    def setNumberOfRooms(self, numberOfRooms):
+        self.__numberOfRooms = numberOfRooms
+
+    def getStatus(self):
+        return self.__status
+
+    def setStatus(self, status):
+        self.__status = status
+
+    def getTotalPrice(self):
+        return self.__totalPrice
+
+    def setTotalPrice(self, totalPrice):
+        self.__totalPrice = totalPrice
+
+    # Function to create a reservation
+    def createReservation(self):
+    #    Creates a new reservation with the current details. This method will check if sufficient funds are available, then it will finalize the reservation and store the details.
+        pass
+
+    # Function to cancel a reservation
+    def cancelReservation(self):
+        # Cancels the existing booking. The cancellation will be handled via this method, which will also update the reservation status and can refund any applicable amounts.
+        pass
+
+# Example of using the Reservation class
+reservation = Reservation("52523687", "Sun, Aug 22, 2010", "Tue, Aug 24, 2010", 2, 1, "Confirmed", 201.48)
+print("Reservation Details:")
+print(f"PIN: {reservation.getReservationPIN()}, Check-In: {reservation.getCheckInDate()}, Check-Out: {reservation.getCheckOutDate()}, Number of Nights: {reservation.getNumberOfNights()}, Status: {reservation.getStatus()}, Total Price: ${reservation.getTotalPrice()}")
+
+# Update reservation details
+reservation.setCheckInDate("Sat, Aug 21, 2010")
+reservation.setTotalPrice(220.00)
+reservation.setStatus("Updated")  # Assume we want to update the status
+print("\nUpdated Reservation Details:")
+print(f"PIN: {reservation.getReservationPIN()}, Check-In: {reservation.getCheckInDate()}, Check-Out: {reservation.getCheckOutDate()}, Number of Nights: {reservation.getNumberOfNights()}, Status: {reservation.getStatus()}, Total Price: ${reservation.getTotalPrice()}")
+
+
+
+
+
+
+
+
+#Guest class code:
+# A Guest class is used to handle information related to an individual like firstName, lastName, email, phoneNumber, billingName
+class Guest:
+    # Initialize the main attributes like firstName, lastName, email, phoneNumber and billingName
+    def __init__(self, firstName, lastName, email, phoneNumber, billingName):
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.phoneNumber = phoneNumber
+        self.billingName = billingName
+
+    # Use the set function to allow the guests to set or update their reservation details
+    def setFirstName(self, firstName):
+        self.firstName = firstName
+
+    #  Call the guest and retrieve the FirstName
+    def getFirstName(self):
+        return self.firstName
+
+    def setLastName(self, lastName):
+        self.lastName = lastName
+
+    def getLastName(self):
+        return self.lastName
+
+    def setEmail(self, email):
+        self.email = email
+
+    def getEmail(self):
+        return self.email
+
+    def setPhoneNumber(self, phoneNumber):
+        self.phoneNumber = phoneNumber
+
+    def getPhoneNumber(self):
+        return self.phoneNumber
+
+    def setBillingName(self, billingName):
+        self.billingName = billingName
+
+    def getBillingName(self):
+        return self.billingName
+
+    # Function to create a GuestInfo updated
+    def updateGuestInfo(self):
+        pass
+
+# Example usage
+guest = Guest("Ted", "Vera", "tedvera@mac.com", "505-661-1110", "Ted H Vera")
+print("Guest Details:")
+print(f"Name: {guest.getFirstName()} {guest.getLastName()}, Email: {guest.getEmail()}, Phone: {guest.getPhoneNumber()}, Billing Name: {guest.getBillingName()}")
+
+# Update guest details
+guest.setFirstName("Theodore")
+guest.setLastName("Veras")
+guest.setEmail("theodoreveras@mac.com")
+
+# Print updated guest details
+print("\nUpdated Guest Details:")
+print(f"Name: {guest.getFirstName()} {guest.getLastName()}, Email: {guest.getEmail()}, Phone: {guest.getPhoneNumber()}, Billing Name: {guest.getBillingName()}")
+
+
+
+
+
+
+
+
+
+
+
+
+#Room class code:
+# A Room class is used to handle information related of room like roomType, roomPrice, numberOfNights, roomNumber, roomServices
+class Room:
+    # Initialize the room attributes
+    def __init__(self, roomType, roomPrice, numberOfNights, roomNumber, roomServices):
+        self.roomType = roomType
+        self.roomPrice = roomPrice
+        self.numberOfNights = numberOfNights
+        self.roomNumber = roomNumber
+        self.roomServices = roomServices
+
+    # Setters and Getters
+    def setRoomType(self, roomType):
+        self.roomType = roomType
+
+    def getRoomType(self):
+        return self.roomType
+
+    def setRoomPrice(self, roomPrice):
+        self.roomPrice = roomPrice
+
+    def getRoomPrice(self):
+        return self.roomPrice
+
+    def setNumberOfNights(self, numberOfNights):
+        self.numberOfNights = numberOfNights
+
+    def getNumberOfNights(self):
+        return self.numberOfNights
+
+    def setRoomNumber(self, roomNumber):
+        self.roomNumber = roomNumber
+
+    def getRoomNumber(self):
+        return self.roomNumber
+
+    def setRoomServices(self, roomServices):
+        self.roomServices = roomServices
+
+    def getRoomServices(self):
+        return self.roomServices
+
+    # Check availability method
+    def checkAvailability(self):
+        pass
+
+# Example usage
+room = Room("2 Queen Beds", 89.95, 2, 101, ["No Smoking", "Desk", "Coffee Maker"])
+print("Room Details:")
+print(f"Type: {room.getRoomType()}, Price: ${room.getRoomPrice()}, Nights: {room.getNumberOfNights()}, Room Number: {room.getRoomNumber()}, Services: {', '.join(room.getRoomServices())}")
+
+# Update room details
+room.setRoomPrice(99.95)  # Price updated
+room.setRoomType("1 King Bed")
+
+# Print updated room details
+print("\nUpdated Room Details:")
+print(f"Type: {room.getRoomType()}, Price: ${room.getRoomPrice()}, Nights: {room.getNumberOfNights()}, Room Number: {room.getRoomNumber()}, Services: {', '.join(room.getRoomServices())}")
+
+
+
+
+
+
+
+
+
+
+#Payment class code:
+# A Payment class is used to handle information related of room like billingName, creditCard, totalCharges, taxesAndFees
+class Payment:
+    # Initialize the main attributes of payment class
+    def __init__(self, billingName, creditCard, totalCharges, taxesAndFees):
+        self.billingName = billingName
+        self.creditCard = creditCard
+        self.totalCharges = totalCharges
+        self.taxesAndFees = taxesAndFees
+
+    # Setters and Getters
+    def setBillingName(self, billingName):
+        self.billingName = billingName
+
+    def getBillingName(self):
+        return self.billingName
+
+    def setCreditCard(self, creditCard):
+        self.creditCard = creditCard
+
+    def getCreditCard(self):
+        return self.creditCard
+
+    def setTotalCharges(self, totalCharges):
+        self.totalCharges = totalCharges
+
+    def getTotalCharges(self):
+        return self.totalCharges
+
+    def setTaxesAndFees(self, taxesAndFees):
+        self.taxesAndFees = taxesAndFees
+
+    def getTaxesAndFees(self):
+        return self.taxesAndFees
+
+    # Process payment method
+    def processPayment(self):
+        pass
+
+# Example usage
+payment = Payment("Ted H Vera", "Mastercard (ending in 9904)", 201.48, 21.58)
+print("Payment Details:")
+print(f"Billing Name: {payment.getBillingName()}, Credit Card: {payment.getCreditCard()}, Total Charges: ${payment.getTotalCharges()}, Taxes and Fees: ${payment.getTaxesAndFees()}")
+
+# Update payment details
+payment.setTotalCharges(220.00)  # Updated total charges
+
+# Print updated payment details
+print("\nUpdated Payment Details:")
+print(f"Billing Name: {payment.getBillingName()}, Credit Card: {payment.getCreditCard()}, Total Charges: ${payment.getTotalCharges()}, Taxes and Fees: ${payment.getTaxesAndFees()}")
+
+
